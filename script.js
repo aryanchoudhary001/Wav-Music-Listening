@@ -1,5 +1,4 @@
 let currentSong = new Audio();
-// Global variable to store the loaded playlist so it can be accessed inside click listeners
 let globalSongsList = []; 
 
 function formatTime(seconds) {
@@ -11,10 +10,6 @@ function formatTime(seconds) {
 
     return `${minutes}:${remainingSeconds}`;
 }
-
-console.log(formatTime(12));   // 00:12
-console.log(formatTime(72));   // 01:12
-console.log(formatTime(125));  // 02:05
 
 async function getSongs() {
     let a = await fetch("songs/");
@@ -35,16 +30,10 @@ async function getSongs() {
 const playMusic = (track) => {
     currentSong.src = "/songs/" + track;
     currentSong.play();
-    play.src = "pause.svg";
+    document.querySelector("#play").src = "pause.svg";
     
-    /* 
-      🛠️ FIX 1: Cleaned the display name for the playbar.
-      Using decodeURIComponent() removes the '%20' markers.
-      Using .replace() strips off the file extensions like .mp3 and .m4a.
-    */
     let displayName = decodeURIComponent(track).replace(".mp3", "").replace(".m4a", "");
     document.querySelector(".songinfo").innerHTML = displayName;
-    
     document.querySelector(".songtime").innerHTML = "00:00/00:00";
 };
 
@@ -75,49 +64,74 @@ async function main() {
     Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e => {
         e.addEventListener("click", element => {
             let song = decodeURIComponent(e.dataset.song);
-            console.log(song);
             playMusic(song);
         });
     });
 
+    // Grab playbar controls explicitly
+    let playBtn = document.querySelector("#play");
+    let previousBtn = document.querySelector("#previous");
+    let nextBtn = document.querySelector("#next");
+
     // Attach an event listener to the playbar's main play button
-    play.addEventListener("click", () => {
+    playBtn.addEventListener("click", () => {
         if (currentSong.paused) {
-            /* 
-              🛠️ FIX 2: Check if a song has already been loaded or is currently selected.
-              The logic checks if the audio element's source is empty or points to the root directory.
-            */
             if (!currentSong.src || currentSong.src === window.location.href) {
-                /* 
-                🛠️ FIX 3: Automatically load and play the first song in your array 
-                if the user clicks the playbar button before selecting a specific item.
-                */
                 if (globalSongsList.length > 0) {
                     playMusic(globalSongsList[0]);
                 }
             } else {
-                // If a song was already selected or paused mid-track, simply resume playback
                 currentSong.play();
-                play.src = "pause.svg";
+                playBtn.src = "pause.svg";
             }
         } else {
-            // Pause the music if it's currently running
             currentSong.pause();
-            play.src = "play.svg";
+            playBtn.src = "play.svg";
         }
     });
+
+    // --- ROBUST NEXT BUTTON FUNCTIONALITY ---
+    nextBtn.addEventListener("click", () => {
+        currentSong.pause();
+        
+        let currentFileName = decodeURIComponent(currentSong.src.split("/songs/").pop());
+        let index = globalSongsList.findIndex(song => decodeURIComponent(song) === currentFileName);
+        
+        if (index !== -1 && (index + 1) < globalSongsList.length) {
+            playMusic(globalSongsList[index + 1]);
+        } else if (globalSongsList.length > 0) {
+            playMusic(globalSongsList[0]); // Loops back to first song
+        }
+    });
+
+    // --- ROBUST PREVIOUS BUTTON FUNCTIONALITY ---
+    previousBtn.addEventListener("click", () => {
+        currentSong.pause();
+
+        let currentFileName = decodeURIComponent(currentSong.src.split("/songs/").pop());
+        let index = globalSongsList.findIndex(song => decodeURIComponent(song) === currentFileName);
+        
+        if (index > 0) {
+            playMusic(globalSongsList[index - 1]);
+        } else if (globalSongsList.length > 0) {
+            playMusic(globalSongsList[globalSongsList.length - 1]); // Loops to last song
+        }
+    });
+
     // Listen for timeupdate event
-    currentSong.addEventListener("timeupdate",()=>{
-        console.log(currentSong.currentTime,currentSong.duration);
-        document.querySelector(".songtime").innerHTML = `${formatTime(currentSong.currentTime)}/${formatTime(currentSong.duration)}`
-        document.querySelector(".circle").style.left = (currentSong.currentTime/currentSong.duration)*100 + "%";
-    })
-    //add an event listener to seekbar
-    document.querySelector(".seekbar").addEventListener("click",e=>{
-        let percent = (e.offsetX/e.target.getBoundingClientRect().width)*100;
+    currentSong.addEventListener("timeupdate", () => {
+        document.querySelector(".songtime").innerHTML = `${formatTime(currentSong.currentTime)}/${formatTime(currentSong.duration)}`;
+        if(currentSong.duration) {
+            document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration) * 100 + "%";
+        }
+    });
+
+    // Add an event listener to seekbar
+    document.querySelector(".seekbar").addEventListener("click", e => {
+        let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
         document.querySelector(".circle").style.left = percent + "%";
-        currentSong.currentTime = ((currentSong.duration)*percent)/100
-    })
+        currentSong.currentTime = ((currentSong.duration) * percent) / 100;
+    });
 }
 
 main();
