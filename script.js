@@ -35,6 +35,16 @@ const playMusic = (track) => {
     let displayName = decodeURIComponent(track).replace(".mp3", "").replace(".m4a", "");
     document.querySelector(".songinfo").innerHTML = displayName;
     document.querySelector(".songtime").innerHTML = "00:00/00:00";
+
+    // --- FEATURE: HIGHLIGHT ACTIVE SONG IN LIBRARY ---
+    Array.from(document.querySelector(".songList ul").getElementsByTagName("li")).forEach(e => {
+        let targetSong = decodeURIComponent(e.dataset.song);
+        if (targetSong === track) {
+            e.classList.add("active-song");
+        } else {
+            e.classList.remove("active-song");
+        }
+    });
 };
 
 async function main() {
@@ -90,7 +100,7 @@ async function main() {
         }
     });
 
-    // --- ROBUST NEXT BUTTON FUNCTIONALITY ---
+    // --- NEXT BUTTON FUNCTIONALITY ---
     nextBtn.addEventListener("click", () => {
         currentSong.pause();
         
@@ -104,7 +114,7 @@ async function main() {
         }
     });
 
-    // --- ROBUST PREVIOUS BUTTON FUNCTIONALITY ---
+    // --- PREVIOUS BUTTON FUNCTIONALITY ---
     previousBtn.addEventListener("click", () => {
         currentSong.pause();
 
@@ -115,6 +125,56 @@ async function main() {
             playMusic(globalSongsList[index - 1]);
         } else if (globalSongsList.length > 0) {
             playMusic(globalSongsList[globalSongsList.length - 1]); // Loops to last song
+        }
+    });
+
+    // --- FEATURE: AUTO-PLAY NEXT SONG ON END ---
+    currentSong.addEventListener("ended", () => {
+        let currentFileName = decodeURIComponent(currentSong.src.split("/songs/").pop());
+        let index = globalSongsList.findIndex(song => decodeURIComponent(song) === currentFileName);
+        
+        if (index !== -1 && (index + 1) < globalSongsList.length) {
+            playMusic(globalSongsList[index + 1]);
+        } else if (globalSongsList.length > 0) {
+            playMusic(globalSongsList[0]);
+        }
+    });
+
+    // --- FEATURE: LIVE SEARCH BAR FILTERING ---
+    let searchInput = document.querySelector("#searchInput");
+    if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+            let query = e.target.value.toLowerCase();
+            let songItems = document.querySelectorAll(".songList ul li");
+            
+            songItems.forEach(item => {
+                let songTitle = item.querySelector(".info div").textContent.toLowerCase();
+                if (songTitle.includes(query)) {
+                    item.style.display = "flex"; // Show matching songs
+                } else {
+                    item.style.display = "none"; // Hide non-matching songs
+                }
+            });
+        });
+    }
+
+    // --- FEATURE: KEYBOARD SHORTCUTS (SPACEBAR TO PLAY/PAUSE) ---
+    document.addEventListener("keydown", (e) => {
+        if (e.code === "Space") {
+            e.preventDefault(); // Prevents browser from scrolling down
+            if (currentSong.paused) {
+                if (!currentSong.src || currentSong.src === window.location.href) {
+                    if (globalSongsList.length > 0) {
+                        playMusic(globalSongsList[0]);
+                    }
+                } else {
+                    currentSong.play();
+                    playBtn.src = "pause.svg";
+                }
+            } else {
+                currentSong.pause();
+                playBtn.src = "play.svg";
+            }
         }
     });
 

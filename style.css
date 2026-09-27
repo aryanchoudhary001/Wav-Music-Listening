@@ -275,3 +275,40 @@ body{
     width: 15%;
     text-align: right;
 }
+.songList li.active-song {
+    background-color: #282828;
+    border-left: 4px solid #1db954;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 5px 14px; /* Thin vertical padding */
+    border-radius: 500px;
+    width: 320px; /* Wider horizontally */
+    gap: 8px;
+    border: 1px solid #333333;
+    transition: all 0.2s ease;
+}
+
+.search-container:hover {
+    border-color: #777777;
+}
+
+.search-container:focus-within {
+    border-color: #ffffff;
+    background: #242424;
+}
+
+#searchInput {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    font-size: 13px; /* Clean, compact font size */
+}
+
+#searchInput::placeholder {
+    color: #888888;
+}
