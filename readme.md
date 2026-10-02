@@ -470,9 +470,76 @@ If copyrighted music is used, ensure that you have the appropriate rights or per
 
 ---
 
-# 🤝 Contributing
+# 🤝 Contributors
 
-Contributions and ideas are welcome.
+<div align="center">
+
+### Built with collaboration, creativity & code. 💙
+
+**wav.** is a collaborative music-player project developed with a shared focus on clean design, smooth functionality, and a great listening experience.
+
+<br>
+
+<table>
+<tr>
+
+<td align="center" width="50%">
+
+### 👨‍💻 Aryan Raj
+
+<a href="https://github.com/aryanchoudhary001">
+  <img src="https://github.com/aryanchoudhary001.png" width="120px" alt="Aryan Raj"/>
+</a>
+
+<br>
+
+**Developer & Project Lead**
+
+<a href="https://github.com/aryanchoudhary001">
+  <img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white" alt="Aryan Raj GitHub"/>
+</a>
+
+</td>
+
+<td align="center" width="50%">
+
+### 👨‍💻 Ritesh Yadav
+
+<a href="https://github.com/RITESH-GITHUB-USERNAME">
+  <img src="https://github.com/RITESH-GITHUB-USERNAME.png" width="120px" alt="Ritesh Yadav"/>
+</a>
+
+<br>
+
+**Developer & Contributor**
+
+<a href="https://github.com/RITESH-GITHUB-USERNAME">
+  <img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white" alt="Ritesh Yadav GitHub"/>
+</a>
+
+</td>
+
+</tr>
+</table>
+
+<br>
+
+---
+
+### 🎵 Our Contribution
+
+We worked together on **designing, developing, testing, and improving wav.**, combining frontend development, UI design, JavaScript functionality, and continuous experimentation to build the application.
+
+<br>
+
+### 💙 Built Together. Played Everywhere.
+
+# `wav.`
+
+**Aryan Raj × Ritesh Yadav**
+
+</div>
+
 
 ```bash
 # Fork the repository
