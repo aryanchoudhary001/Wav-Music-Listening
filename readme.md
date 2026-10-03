@@ -528,7 +528,7 @@ If copyrighted music is used, ensure that you have the appropriate rights or per
 
 ### 🎵 Our Contribution
 
-We worked together on **designing, developing, testing, and improving wav.**, combining frontend development, UI design, JavaScript functionality, and continuous experimentation to build the application.
+We worked together on **designing, developing, testing, and improving wav.**, combining frontend development, UI design, JavaScript functionality, and continuous experimentation to build the application. music
 
 <br>
 
