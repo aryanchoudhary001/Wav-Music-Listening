@@ -411,7 +411,7 @@ The project is continuously evolving.
 * [ ] Album artwork integration
 * [ ] Improved animations
 
-### 🔮 Future Ideas
+### 🔮 Future Ideas ...
 
 * [ ] 🔀 Shuffle
 * [ ] 🔁 Repeat
