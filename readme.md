@@ -564,7 +564,7 @@ Then open a **Pull Request**.
 
 If you like **wav.**, consider giving the repository a ⭐.
 
-It helps support the project and encourages further development.a
+It helps support the project and encourages further development.aS
 
 <div align="center">
 
