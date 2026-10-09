@@ -570,7 +570,7 @@ It helps support the project and encourages further development.aSss
 
 ### 🎵 Keep listening.
 
-# <font color="#5865F2">wav.</font>
+# <font color="#0015ff">wav.</font>
 
 **Your music. Your vibe.**
 
