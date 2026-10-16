@@ -575,7 +575,7 @@ It helps support the project and encourages further development.aSss
 **Your music. Your vibe.**
 GGGUUUhh
 <br>
-songs play
+songs play with vibe
 Made with ❤️ and JavaScript
 
 </div>
