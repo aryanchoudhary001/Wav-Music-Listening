@@ -573,7 +573,7 @@ It helps support the project and encourages further development.aSss
 # <font color="#0015ff">wav.</font>
 
 **Your music. Your vibe.**
-GGGUUUhh
+GGG
 <br>
 songs play with vibe
 Made with ❤️ and JavaScript
