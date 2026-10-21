@@ -576,6 +576,6 @@ It helps support the project and encourages further development.aSss
 GGG
 <br>
 songs play with vibe
-Made with ❤️ and JavaScript and Partner
+Made with ❤️ and JavaScript and Partner ritu
 
 </div>
