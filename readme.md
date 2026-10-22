@@ -30,7 +30,7 @@ The application combines a modern dark interface with a vibrant blue visual iden
 
 From dynamically loading songs to controlling playback through the custom player interface, **wav.** is built to explore how a real-world music application works using core web technologies.
 
-> **wav. — Your music. Your vibe.**
+> **wav. — Your music. Your music vibe.**
 
 ---
 
