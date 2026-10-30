@@ -576,6 +576,6 @@ It helps support the project and encourages further development.aSss
 GGG
 <br>
 songs play with Vvibe
-Made with ❤️ and JavaScript and Partner  YADAV
+Made with ❤️ and JavaScript and Partner Ritesh Yadav
 
 </div>
