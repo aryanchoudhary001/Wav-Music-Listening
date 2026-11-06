@@ -532,7 +532,7 @@ We worked together on **designing, developing, testing, and improving wav.**, co
 
 <br>
 
-### 💙 Built Together. Played Everywhere With Your Vibe.
+### 💙 Built Togeether. Played Everywhere With Your Vibe.
 
 # `wav.`
 
