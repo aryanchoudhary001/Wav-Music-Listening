@@ -314,7 +314,7 @@ Open the application and select any available song from **Your Library**.
 
 # 🧠 What I Learned
 
-Building **wav.** helped me understand practical frontend development concepts beyond simply writing HTML and CSS.
+Building **wav.** helped me understand practical frontend developments concepts beyond simply writing HTML and CSS.
 
 ### 🌐 Frontend
 
@@ -532,7 +532,7 @@ We worked together on **designing, developing, testing, and improving wav.**, co
 
 <br>
 
-### 💙 Built Togeether. Played Everywhere With Your Vibe.
+### 💙 Built Together. Played Everywhere With Your Vibe.
 
 # `wav.`
 
