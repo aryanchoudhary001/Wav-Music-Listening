@@ -321,7 +321,7 @@ Building **wav.** helped me understand practical frontend developments concepts 
 * HTML structure
 * CSS layouts
 * Flexbox
-* Responsive designs
+* Responsivee designs
 * UI component styling
 * Dark-theme design
 
