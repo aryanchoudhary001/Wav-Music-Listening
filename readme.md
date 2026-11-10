@@ -318,7 +318,7 @@ Building **wav.** helped me understand practical frontend developments concepts 
 
 ### 🌐 Frontend
 
-* HTML structure
+* HTML structures
 * CSS layouts
 * Flexbox
 * Responsivee designs
