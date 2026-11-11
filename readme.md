@@ -314,7 +314,7 @@ Open the application and select any available song from **Your Library**.
 
 # 🧠 What I Learned
 
-Building **wav.** helped me understand practical frontend developments concepts beyond simply writing HTML and CSS.
+Building **wav.** helped me underrstand practical frontend developments concepts beyond simply writing HTML and CSS.
 
 ### 🌐 Frontend
 
