@@ -306,7 +306,7 @@ The application will open at a local address similar to:
 http://127.0.0.1:5500/
 ```
 
-## 5️⃣ Start Listening 🎧
+## 5️⃣ Start Listeninng 🎧
 
 Open the application and select any available song from **Your Library**.
 
