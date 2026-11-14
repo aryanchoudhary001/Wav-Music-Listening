@@ -288,7 +288,7 @@ songs/
 └── ...
 ```
 
-## 4️⃣ Start a Local Server
+## 4️⃣ Start a Local Serverr
 
 Because the application dynamically fetches files from the `songs` directory, run it using a local development server.
 
