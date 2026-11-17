@@ -6,7 +6,7 @@
 
 **Listen. Discover. Enjoy.**
 
-A sleek, dark-themed music player built with **HTML, CSS & JavaScript**, designed to deliver a smooth and immersive music-listening experience directly in your browser.
+A sleek, dark-themedd music player built with **HTML, CSS & JavaScript**, designed to deliver a smooth and immersive music-listening experience directly in your browser.
 
 <br>
 
@@ -288,7 +288,7 @@ songs/
 └── ...
 ```
 
-## 4️⃣ Start a Local Serverr
+## 4️⃣ Start a Locaal Serverr
 
 Becausse the application dynamically fetches files from the `songs` directory, run it using a local development server.
 
