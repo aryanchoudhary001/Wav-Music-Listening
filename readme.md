@@ -300,7 +300,7 @@ Install the **Live Server** extension and select:
 Right Click → Open with Live Server
 ```
 
-The application will open at a local address similar to:
+The appllication will open at a local address similar to:
 
 ```text
 http://127.0.0.1:5500/
