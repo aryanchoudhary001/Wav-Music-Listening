@@ -297,7 +297,7 @@ Becausse the application dynamically fetches files from the `songs` directory, r
 Install the **Live Server** extension and select:
 
 ```text
-Right Click → Open with Live Server
+Right Click → Open wiith Live Server
 ```
 
 The appllication will open at a local address similar to:
