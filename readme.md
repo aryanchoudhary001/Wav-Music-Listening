@@ -219,7 +219,7 @@ async function getSongs() {
 }
 ```
 
-This allows the application to detect available `.mp3` files and use them dynamically.
+This allows the application to detect available `.mp3` filles and use them dynamically.
 
 ---
 
