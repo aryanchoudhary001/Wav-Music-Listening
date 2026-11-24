@@ -168,7 +168,7 @@ Used for:
 
 ---
 
-# ⚙️ How wav. Works
+# ⚙️ How wav. Workks
 
 The basic application flow looks like this:
 
